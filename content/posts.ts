@@ -6,24 +6,38 @@ export type Post = {
   slug: string;
   title: string;
   description: string;
+  category: string;
   date: string; // ISO, publication
   updated?: string; // ISO, last meaningful update
   readingMinutes: number;
   keywords: string[];
+  // Internal linking (pillar-cluster). Slugs of related calculators + posts.
+  relatedCalculators: string[];
+  relatedPosts: string[];
   // Trusted, hand-authored HTML. Rendered as-is.
   body: string;
 };
+
+export const categories = [
+  "Wirtschaftlichkeit",
+  "Recht & Anmeldung",
+  "Technik & Montage",
+  "Förderung",
+] as const;
 
 export const posts: Post[] = [
   {
     slug: "lohnt-sich-ein-balkonkraftwerk",
     title: "Lohnt sich ein Balkonkraftwerk 2026? Die ehrliche Rechnung",
+    category: "Wirtschaftlichkeit",
     description:
       "Amortisiert sich ein Balkonkraftwerk wirklich? Wir rechnen ehrlich nach – mit realistischem Eigenverbrauch, ohne Einspeise-Mythen, und zeigen, wovon sich die Ersparnis tatsächlich abhängt.",
     date: "2026-05-12",
     updated: "2026-06-02",
     readingMinutes: 6,
     keywords: ["lohnt sich ein balkonkraftwerk", "balkonkraftwerk amortisation", "balkonkraftwerk ersparnis"],
+    relatedCalculators: ["balkonkraftwerk-rechner", "speicher-rechner"],
+    relatedPosts: ["balkonkraftwerk-anmelden", "balkonkraftwerk-ausrichtung"],
     body: `
 <p class="lead">Die kurze Antwort: Ja – aber nicht aus dem Grund, den viele vermuten. Wer mit der Einspeisevergütung rechnet, rechnet falsch. Der Wert eines Balkonkraftwerks steckt fast vollständig im selbst genutzten Strom.</p>
 
@@ -61,12 +75,15 @@ export const posts: Post[] = [
   {
     slug: "balkonkraftwerk-anmelden",
     title: "Balkonkraftwerk anmelden 2026: Anleitung fürs Marktstammdatenregister",
+    category: "Recht & Anmeldung",
     description:
       "Seit dem Solarpaket I ist die Anmeldung deutlich einfacher: nur noch das Marktstammdatenregister, kein Netzbetreiber mehr. Schritt für Schritt erklärt, inklusive Fristen und typischer Fehler.",
     date: "2026-04-28",
     updated: "2026-06-01",
     readingMinutes: 4,
     keywords: ["balkonkraftwerk anmelden", "marktstammdatenregister balkonkraftwerk", "balkonkraftwerk anmeldung"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk", "balkonkraftwerk-foerderung-2026"],
     body: `
 <p class="lead">Gute Nachricht vorweg: Die Anmeldung eines Balkonkraftwerks dauert heute nur wenige Minuten und ist komplett kostenlos. Seit dem Solarpaket I ist nur noch eine einzige Stelle zuständig.</p>
 
@@ -103,11 +120,14 @@ export const posts: Post[] = [
   {
     slug: "balkonkraftwerk-mit-speicher",
     title: "Balkonkraftwerk mit Speicher: Lohnt sich das 2026?",
+    category: "Wirtschaftlichkeit",
     description:
       "Ein Speicher hebt den Eigenverbrauch von rund 35 auf 60 bis 70 Prozent – kostet aber extra. Wann sich die Investition rechnet und wann nicht.",
     date: "2026-05-20",
     readingMinutes: 5,
     keywords: ["balkonkraftwerk mit speicher", "balkonkraftwerk speicher lohnt sich", "mini pv speicher"],
+    relatedCalculators: ["speicher-rechner", "balkonkraftwerk-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk", "balkonkraftwerk-ausrichtung"],
     body: `
 <p class="lead">Ein Speicher löst das größte Problem des Balkonkraftwerks: Strom entsteht mittags, gebraucht wird er abends. Die Frage ist nur, ob die höhere Ersparnis die Mehrkosten trägt.</p>
 
@@ -134,12 +154,15 @@ export const posts: Post[] = [
   {
     slug: "balkonkraftwerk-foerderung-2026",
     title: "Balkonkraftwerk Förderung 2026: Wo es Zuschüsse gibt",
+    category: "Förderung",
     description:
       "Es gibt keine bundesweite Förderung, aber 0 % Mehrwertsteuer und regionale Zuschüsse zwischen 100 und 500 Euro. Der Überblick, welche Programme 2026 aktiv sind – und worauf du beim Antrag achten musst.",
     date: "2026-05-30",
     updated: "2026-06-05",
     readingMinutes: 5,
     keywords: ["balkonkraftwerk förderung 2026", "balkonkraftwerk zuschuss", "steckersolar förderung"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk", "balkonkraftwerk-anmelden"],
     body: `
 <p class="lead">Die wichtigste Förderung gilt bundesweit und automatisch: 0 Prozent Mehrwertsteuer auf Balkonkraftwerk und Speicher. Darüber hinaus ist Förderung reine Regionalsache – und ändert sich ständig.</p>
 
@@ -164,6 +187,77 @@ export const posts: Post[] = [
 
 <h2>Lohnt sich das Warten auf Förderung?</h2>
 <p>Nicht unbedingt. Selbst ohne Zuschuss amortisiert sich ein günstiges Set in wenigen Jahren. Eine Förderung beschleunigt das, sollte aber keine Kaufentscheidung blockieren – zumal Programme jederzeit auslaufen können. Rechne deinen Fall mit und ohne Zuschuss im Rechner durch, indem du die Anschaffungskosten entsprechend anpasst.</p>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-ausrichtung",
+    title: "Balkonkraftwerk Ausrichtung & Neigung: So holst du den maximalen Ertrag",
+    category: "Technik & Montage",
+    description:
+      "Süd, Ost-West oder Nord, senkrecht oder aufgeständert: Wie Ausrichtung und Neigungswinkel den Ertrag deines Balkonkraftwerks beeinflussen – und wann sich welche Montage lohnt.",
+    date: "2026-05-25",
+    readingMinutes: 5,
+    keywords: ["balkonkraftwerk ausrichtung", "balkonkraftwerk neigungswinkel", "balkonkraftwerk ertrag optimieren"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk", "balkonkraftwerk-welche-geraete"],
+    body: `
+<p class="lead">Dieselbe Anlage kann je nach Ausrichtung und Neigung doppelt so viel Strom liefern – oder eben die Hälfte. Wer das versteht, holt mehr aus seinem Balkonkraftwerk heraus, ohne einen Cent mehr auszugeben.</p>
+
+<h2>Die Ausrichtung entscheidet am meisten</h2>
+<p>Eine Südausrichtung liefert in Deutschland den höchsten Jahresertrag. Südost und Südwest sind fast gleichwertig. Eine reine Ost- oder Westausrichtung bringt etwa 80 bis 85 Prozent davon, eine Nordausrichtung nur rund die Hälfte – kann sich bei günstigen Strompreisen aber trotzdem rechnen.</p>
+<p>Wichtig für Balkonbesitzer: Ost-West verteilt den Ertrag über den Tag (morgens und abends), während Süd die Mittagsspitze betont. Da du abends oft mehr Strom verbrauchst, kann Ost-West den Eigenverbrauch sogar verbessern.</p>
+
+<h2>Der Neigungswinkel</h2>
+<p>Optimal ist in Deutschland ein Winkel von etwa 30 bis 35 Grad. Genau das erreichst du mit einer aufgeständerten Montage – sie bringt den vollen Ertrag. Senkrecht am Balkongeländer montiert (90 Grad) sinkt der Ertrag auf rund 70 Prozent, dafür sind die Module schneefrei und nutzen den tiefen Wintersonnenstand besser.</p>
+
+<h3>Montage-Varianten im Vergleich</h3>
+<ul>
+<li><strong>Aufgeständert (ca. 30°):</strong> höchster Ertrag, braucht Platz auf Balkon oder Flachdach.</li>
+<li><strong>Senkrecht am Geländer:</strong> einfachste Montage, ca. 70 Prozent Ertrag, robust im Winter.</li>
+<li><strong>Flach liegend:</strong> ca. 85 bis 90 Prozent, aber Verschmutzung sammelt sich leichter.</li>
+</ul>
+
+<div class="note">Spiel die Kombinationen direkt im Rechner durch: Stell deine Ausrichtung und Montageart ein und vergleiche, wie sich Ertrag und Ersparnis verändern.</div>
+
+<h2>Verschattung nicht unterschätzen</h2>
+<p>Schon ein Teilschatten – etwa durch ein Geländer, einen Baum oder das Nachbarhaus – kann den Ertrag stark drücken. Beobachte über den Tag, wann und wo Schatten fällt, und richte die Module so aus, dass sie in den ertragsstärksten Stunden (späte Vormittage bis früher Nachmittag) frei in der Sonne stehen.</p>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-welche-geraete",
+    title: "Welche Geräte kann ein Balkonkraftwerk mit 800 Watt betreiben?",
+    category: "Technik & Montage",
+    description:
+      "800 Watt klingen wenig – decken aber die Grundlast vieler Haushalte. Welche Geräte ein Balkonkraftwerk versorgt und wie du den Eigenverbrauch ohne Speicher erhöhst.",
+    date: "2026-06-03",
+    readingMinutes: 4,
+    keywords: ["balkonkraftwerk welche geräte", "800 watt balkonkraftwerk geräte", "balkonkraftwerk eigenverbrauch erhöhen"],
+    relatedCalculators: ["balkonkraftwerk-rechner", "stromkosten-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk", "balkonkraftwerk-ausrichtung"],
+    body: `
+<p class="lead">800 Watt reichen nicht für alles gleichzeitig – aber sie decken die Grundlast, die in jedem Haushalt ständig läuft. Und genau da steckt die Ersparnis.</p>
+
+<h2>Die Grundlast ist der Schlüssel</h2>
+<p>Geräte, die rund um die Uhr laufen, summieren sich: Kühlschrank, Gefriertruhe, Router, Standby-Verbraucher, Heizungspumpe. Diese Grundlast liegt bei vielen Haushalten zwischen 100 und 300 Watt – genau im Bereich, den ein Balkonkraftwerk tagsüber dauerhaft liefern kann. Dieser Strom wird direkt selbst verbraucht und spart bares Geld.</p>
+
+<h2>Was 800 Watt typischerweise versorgen</h2>
+<ul>
+<li>Kühlschrank und Gefriertruhe (ca. 100–150 W im Mittel)</li>
+<li>WLAN-Router, Smart-Home-Geräte, Ladegeräte</li>
+<li>Laptop und Monitor im Homeoffice</li>
+<li>Kleinere Verbraucher wie Aquarienpumpe oder Lüftung</li>
+</ul>
+<p>Große Verbraucher wie Backofen, Wasserkocher oder Herd ziehen kurzzeitig 2.000 Watt und mehr – die deckt ein Balkonkraftwerk nicht allein, der Rest kommt dann aus dem Netz.</p>
+
+<h2>So erhöhst du den Eigenverbrauch ohne Speicher</h2>
+<p>Je mehr du tagsüber selbst nutzt, desto höher die Ersparnis. Ein paar einfache Hebel:</p>
+<ul>
+<li>Waschmaschine, Geschirrspüler und Trockner in die Mittagsstunden legen (Zeitschaltuhr oder Timer).</li>
+<li>Warmwasserboiler oder Heizstab über Mittag laufen lassen.</li>
+<li>E-Bike, Laptop und Powerbanks tagsüber laden.</li>
+</ul>
+
+<div class="note">Wie viel ein Balkonkraftwerk konkret von deinen Stromkosten abdeckt, zeigt dir der Balkonkraftwerk-Rechner – und deine gesamten Stromkosten ermittelst du im Stromkosten-Rechner.</div>
 `,
   },
 ];

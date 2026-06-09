@@ -1,4 +1,7 @@
-export const faqItems: { q: string; a: string }[] = [
+export type FaqItem = { q: string; a: string };
+
+// Default FAQ for the homepage (Balkonkraftwerk pillar).
+export const faqItems: FaqItem[] = [
   {
     q: "Wie viel Strom erzeugt ein Balkonkraftwerk pro Jahr?",
     a: "Ein typisches Set mit 800 Wp Modulleistung erzeugt in Deutschland je nach Standort, Ausrichtung und Montage rund 600 bis 800 kWh pro Jahr. Mit mehr Modulleistung (bis 2.000 Wp) und guter Südausrichtung sind 1.200 bis 1.400 kWh möglich, da der 800-W-Wechselrichter zwar Spitzen kappt, in Schwachlichtphasen aber häufiger ausgelastet ist.",
@@ -17,7 +20,7 @@ export const faqItems: { q: string; a: string }[] = [
   },
   {
     q: "Lohnt sich ein Speicher für das Balkonkraftwerk?",
-    a: "Ein Speicher erhöht den Eigenverbrauch von etwa 35 auf 60 bis 70 Prozent und steigert so die Ersparnis. Allerdings kostet er mehrere hundert Euro extra und verlängert dadurch die Amortisationszeit. Ob er sich lohnt, hängt stark vom eigenen Verbrauchsprofil ab – am besten im Rechner beide Varianten vergleichen.",
+    a: "Ein Speicher erhöht den Eigenverbrauch von etwa 35 auf 60 bis 70 Prozent und steigert so die Ersparnis. Allerdings kostet er mehrere hundert Euro extra und verlängert dadurch die Amortisationszeit. Ob er sich lohnt, hängt stark vom eigenen Verbrauchsprofil ab – am besten im Speicher-Rechner beide Varianten vergleichen.",
   },
   {
     q: "Gibt es 2026 eine Förderung für Balkonkraftwerke?",
@@ -25,10 +28,10 @@ export const faqItems: { q: string; a: string }[] = [
   },
 ];
 
-export default function Faq() {
+export default function Faq({ items }: { items: FaqItem[] }) {
   return (
     <div className="faq">
-      {faqItems.map((item, i) => (
+      {items.map((item, i) => (
         <details className="faq__item" key={i}>
           <summary>{item.q}</summary>
           <div className="faq__answer">{item.a}</div>

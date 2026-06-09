@@ -1,19 +1,23 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/content/posts";
+import { subCalculators } from "@/content/calculators";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: site.url, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    {
-      url: `${site.url}/ratgeber`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
+    { url: `${site.url}/rechner`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${site.url}/ratgeber`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/impressum`, changeFrequency: "yearly", priority: 0.1 },
     { url: `${site.url}/datenschutz`, changeFrequency: "yearly", priority: 0.1 },
   ];
+
+  const calcPages: MetadataRoute.Sitemap = subCalculators().map((c) => ({
+    url: `${site.url}/rechner/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
 
   const postPages: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${site.url}/ratgeber/${p.slug}`,
@@ -22,5 +26,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...postPages];
+  return [...staticPages, ...calcPages, ...postPages];
 }
