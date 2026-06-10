@@ -2,6 +2,7 @@ import Link from "next/link";
 import Rechner from "@/components/Rechner";
 import Faq, { faqItems } from "@/components/Faq";
 import Icon from "@/components/Icon";
+import HeroArt from "@/components/HeroArt";
 import { posts, formatDate } from "@/content/posts";
 import { subCalculators } from "@/content/calculators";
 import { site } from "@/lib/site";
@@ -36,50 +37,75 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
-      {/* Hero */}
-      <section className="container hero">
-        <span className="eyebrow">
-          <Icon name="sun" size={15} /> Balkonkraftwerk-Rechner 2026
-        </span>
-        <h1>
-          Lohnt sich dein <em>Balkonkraftwerk?</em>
-        </h1>
-        <p className="hero__sub">
-          Berechne Ertrag, jährliche Ersparnis und Amortisation – mit regionalen Ertragsdaten und den
-          aktuellen Regeln für 2026. Ehrlich gerechnet, ohne Einspeise-Mythen.
-        </p>
-        <div className="trust">
-          <span className="trust__item"><Icon name="check" size={17} /> Aktuelle Regeln 2026</span>
-          <span className="trust__item"><Icon name="check" size={17} /> Regionale Ertragsdaten</span>
-          <span className="trust__item"><Icon name="check" size={17} /> Realistischer Eigenverbrauch</span>
-        </div>
-      </section>
-
-      {/* Stats bar */}
-      <div className="stats-bar">
-        <div className="container">
-          <div className="stats-bar__inner">
-            {[
-              { num: "800 W", cls: "stat-item__num--accent", label: "Max. Wechselrichterleistung" },
-              { num: "37 ct", cls: "", label: "Strompreis ∅ 2026" },
-              { num: "0 %", cls: "stat-item__num--solar", label: "MwSt. auf PV-Anlagen" },
-              { num: "3–7 J.", cls: "stat-item__num--green", label: "Typische Amortisation" },
-            ].map((s) => (
-              <div key={s.label} className="stat-item">
-                <span className={`stat-item__num ${s.cls}`}>{s.num}</span>
-                <span className="stat-item__label">{s.label}</span>
-              </div>
-            ))}
+      <section className="container hero-split">
+        <div className="hero-split__copy">
+          <span className="eyebrow"><Icon name="sun" size={15} /> Balkonkraftwerk-Rechner 2026</span>
+          <h1>Lohnt sich dein <em>Balkonkraftwerk?</em></h1>
+          <p className="hero__sub">
+            Berechne Ertrag, jährliche Ersparnis und Amortisation – mit regionalen Ertragsdaten und den
+            aktuellen Regeln für 2026. Ehrlich gerechnet, ohne Einspeise-Mythen.
+          </p>
+          <div className="hero-split__cta">
+            <Link href="#rechner" className="btn">Jetzt berechnen <Icon name="arrow" size={16} /></Link>
+            <Link href="/ratgeber" className="btn btn--ghost">Zum Ratgeber</Link>
+          </div>
+          <div className="trust">
+            <span className="trust__item"><Icon name="check" size={18} /> Regeln 2026</span>
+            <span className="trust__item"><Icon name="check" size={18} /> Regional</span>
+            <span className="trust__item"><Icon name="check" size={18} /> Kostenlos</span>
           </div>
         </div>
-      </div>
+        <HeroArt className="hero-art" />
+      </section>
 
-      {/* Calculator */}
-      <section className="container section--tight" style={{ paddingTop: 40 }}>
+      <section className="container section--tight">
         <Rechner />
       </section>
 
-      {/* Weitere Rechner */}
+      <section className="section--alt section">
+        <div className="container">
+          <div className="stats">
+            <div className="stat">
+              <div className="stat__num">1,2 Mio+</div>
+              <div className="stat__label">angemeldete Balkonkraftwerke in Deutschland</div>
+            </div>
+            <div className="stat">
+              <div className="stat__num">800 W</div>
+              <div className="stat__label">maximale Einspeiseleistung seit dem Solarpaket I</div>
+            </div>
+            <div className="stat">
+              <div className="stat__num">~37 ct</div>
+              <div className="stat__label">durchschnittlicher Strompreis pro kWh (2026)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container section">
+        <div className="section-head">
+          <span className="eyebrow">In 3 Schritten</span>
+          <h2>So nutzt du den Rechner</h2>
+          <p>Vom ersten Wert bis zur Entscheidung – in unter einer Minute.</p>
+        </div>
+        <div className="steps">
+          <div className="card step">
+            <div className="step__n">1</div>
+            <h3>Anlage eingeben</h3>
+            <p>Modulleistung, Bundesland, Ausrichtung und Montageart wählen – die Standardwerte passen für die meisten Balkone.</p>
+          </div>
+          <div className="card step">
+            <div className="step__n">2</div>
+            <h3>Strompreis anpassen</h3>
+            <p>Trag deinen eigenen Strompreis und die Anschaffungskosten ein. Optional einen Speicher dazuschalten.</p>
+          </div>
+          <div className="card step">
+            <div className="step__n">3</div>
+            <h3>Ergebnis ablesen</h3>
+            <p>Du siehst sofort Ertrag, jährliche Ersparnis und nach wie vielen Jahren sich die Anlage amortisiert.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="container section">
         <div className="section-head">
           <span className="eyebrow">Weitere Rechner</span>
@@ -92,7 +118,7 @@ export default function HomePage() {
               <span className="calc-card__icon"><Icon name={c.icon} size={24} /></span>
               <h3>{c.shortLabel}</h3>
               <p>{c.description}</p>
-              <span className="calc-card__go">Rechner öffnen <Icon name="arrow" size={15} /></span>
+              <span className="calc-card__go">Rechner öffnen <Icon name="arrow" size={16} /></span>
             </Link>
           ))}
         </div>
@@ -100,8 +126,7 @@ export default function HomePage() {
 
       <hr className="divider" />
 
-      {/* Erklärung */}
-      <section className="container section" style={{ background: "var(--bg-white)" }}>
+      <section className="container section">
         <div className="prose">
           <h2>So funktioniert die Berechnung</h2>
           <p>
@@ -127,28 +152,23 @@ export default function HomePage() {
             Tiefer einsteigen? Lies, ob sich ein{" "}
             <Link href="/ratgeber/lohnt-sich-ein-balkonkraftwerk">Balkonkraftwerk wirklich lohnt</Link>,
             wie du es <Link href="/ratgeber/balkonkraftwerk-anmelden">richtig anmeldest</Link> oder wie
-            du mit der{" "}
-            <Link href="/ratgeber/balkonkraftwerk-ausrichtung">optimalen Ausrichtung</Link> mehr Ertrag
-            holst.
+            du mit der <Link href="/ratgeber/balkonkraftwerk-ausrichtung">optimalen Ausrichtung</Link>{" "}
+            mehr Ertrag holst.
           </p>
         </div>
       </section>
 
-      <hr className="divider" />
-
-      {/* FAQ */}
-      <section className="container section">
-        <div className="section-head">
-          <span className="eyebrow">FAQ</span>
-          <h2>Häufige Fragen</h2>
-          <p>Die wichtigsten Antworten rund um Ertrag, Anmeldung und Wirtschaftlichkeit.</p>
+      <section className="section--alt section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">FAQ</span>
+            <h2>Häufige Fragen</h2>
+            <p>Die wichtigsten Antworten rund um Ertrag, Anmeldung und Wirtschaftlichkeit.</p>
+          </div>
+          <Faq items={faqItems} />
         </div>
-        <Faq items={faqItems} />
       </section>
 
-      <hr className="divider" />
-
-      {/* Ratgeber Teaser */}
       <section className="container section">
         <div className="section-head">
           <span className="eyebrow">Ratgeber</span>
@@ -161,15 +181,11 @@ export default function HomePage() {
               <div className="post-card__cat">{p.category}</div>
               <h3>{p.title}</h3>
               <p>{p.description}</p>
-              <div className="post-card__meta">
-                <span>{formatDate(p.date)}</span>
-                <span className="post-card__dot" />
-                <span>{p.readingMinutes} Min.</span>
-              </div>
+              <div className="post-card__meta">{formatDate(p.date)} · {p.readingMinutes} Min.</div>
             </Link>
           ))}
         </div>
-        <div style={{ textAlign: "center", marginTop: 36 }}>
+        <div style={{ textAlign: "center", marginTop: 32 }}>
           <Link href="/ratgeber" className="btn btn--ghost">Alle Artikel ansehen</Link>
         </div>
       </section>

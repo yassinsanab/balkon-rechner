@@ -260,6 +260,74 @@ export const posts: Post[] = [
 <div class="note">Wie viel ein Balkonkraftwerk konkret von deinen Stromkosten abdeckt, zeigt dir der Balkonkraftwerk-Rechner – und deine gesamten Stromkosten ermittelst du im Stromkosten-Rechner.</div>
 `,
   },
+  {
+    slug: "balkonkraftwerk-kosten",
+    title: "Was kostet ein Balkonkraftwerk 2026? Preise & Komplettpakete",
+    category: "Wirtschaftlichkeit",
+    description:
+      "Komplettsets gibt es ab rund 300 Euro, mit Speicher ab 600 Euro. Was im Preis steckt, worauf du achten solltest und warum 0 Prozent Mehrwertsteuer gelten.",
+    date: "2026-06-06",
+    readingMinutes: 5,
+    keywords: ["balkonkraftwerk kosten", "balkonkraftwerk preis", "balkonkraftwerk komplettset preis"],
+    relatedCalculators: ["balkonkraftwerk-rechner", "speicher-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk", "balkonkraftwerk-foerderung-2026"],
+    body: `
+<p class="lead">Ein Balkonkraftwerk ist günstiger als viele denken: Komplettsets starten bei rund 300 Euro. Entscheidend ist nicht der niedrigste Preis, sondern was im Set steckt – und ob es zu deinem Balkon passt.</p>
+
+<h2>Preisrahmen 2026</h2>
+<ul>
+<li><strong>Einsteiger-Set (1 Modul, ~400–500 Wp):</strong> rund 250 bis 400 Euro.</li>
+<li><strong>Standard-Set (2 Module, ~800–960 Wp, 800-W-Wechselrichter):</strong> rund 350 bis 600 Euro.</li>
+<li><strong>Leistungs-Set (bis 2.000 Wp Module):</strong> rund 500 bis 800 Euro.</li>
+<li><strong>Set mit Speicher:</strong> ab rund 600 Euro, je nach Kapazität deutlich mehr.</li>
+</ul>
+<p>Seit 2023 gilt der Nullsteuersatz: Auf Balkonkraftwerk und Speicher fällt keine Mehrwertsteuer an. Die genannten Preise sind also Endpreise.</p>
+
+<h2>Was im Set enthalten sein sollte</h2>
+<ul>
+<li>Solarmodule (Wattpeak beachten)</li>
+<li>Wechselrichter mit maximal 800 Watt Ausgangsleistung</li>
+<li>Passende Halterung für deine Montageart (Geländer, Wand, aufgeständert)</li>
+<li>Anschlusskabel und Stecker</li>
+</ul>
+
+<div class="note">Wie schnell sich dein konkretes Set rechnet, hängt vom Preis ab – trag ihn einfach im Balkonkraftwerk-Rechner ins Feld „Anschaffung" ein und vergleiche Amortisation und Ersparnis.</div>
+
+<h2>Wo du sparen kannst – und wo nicht</h2>
+<p>Sparen lohnt sich beim Set selbst über Vergleich und kommunale Förderung. Nicht sparen solltest du bei Halterung und Sicherheit: Eine wackelige Geländerhalterung oder ein nicht normgerechter Anschluss kostet am Ende mehr. Achte auf eine zur Montageart passende, geprüfte Halterung.</p>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-mieter",
+    title: "Balkonkraftwerk als Mieter: Was ist 2026 erlaubt?",
+    category: "Recht & Anmeldung",
+    description:
+      "Seit 2024 gilt Steckersolar als privilegierte Maßnahme: Vermieter und Eigentümergemeinschaft können die Installation nur noch in Ausnahmefällen verweigern. Was das für Mieter bedeutet.",
+    date: "2026-06-08",
+    readingMinutes: 4,
+    keywords: ["balkonkraftwerk mieter", "balkonkraftwerk mietwohnung erlaubt", "balkonkraftwerk vermieter erlaubnis"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-anmelden", "balkonkraftwerk-foerderung-2026"],
+    body: `
+<p class="lead">Gute Nachrichten für Mieter: Seit der Gesetzesänderung 2024 haben Mieter und Wohnungseigentümer einen wesentlich stärkeren Anspruch auf ein Balkonkraftwerk. Eine pauschale Ablehnung ist kaum noch möglich.</p>
+
+<h2>Steckersolar ist eine privilegierte Maßnahme</h2>
+<p>Der Gesetzgeber hat Balkonkraftwerke in den Katalog der privilegierten baulichen Veränderungen aufgenommen – ähnlich wie Lademöglichkeiten fürs E-Auto oder barrierefreie Umbauten. Das bedeutet: Vermieter beziehungsweise die Eigentümergemeinschaft müssen die Installation grundsätzlich dulden und können sie nur in begründeten Ausnahmefällen ablehnen.</p>
+
+<h2>Was du trotzdem beachten musst</h2>
+<ul>
+<li><strong>Zustimmung einholen:</strong> Du brauchst weiterhin das Einverständnis zur konkreten Ausführung – über das „Ob" wird aber nicht mehr frei entschieden, nur über das „Wie".</li>
+<li><strong>Fachgerechte Montage:</strong> Sicherheit und Optik dürfen eine Rolle spielen. Eine saubere, fachgerechte Befestigung erhöht die Chancen deutlich.</li>
+<li><strong>Rückbaubarkeit:</strong> In der Regel muss die Anlage bei Auszug rückstandslos entfernbar sein.</li>
+<li><strong>Anmeldung:</strong> Die Registrierung im Marktstammdatenregister gilt für Mieter genauso.</li>
+</ul>
+
+<div class="note">Tipp: Stell deinem Vermieter eine kurze, konkrete Anfrage mit Foto, geplanter Halterung und dem Hinweis auf die rückstandslose Montage. Das nimmt die häufigsten Bedenken vorweg.</div>
+
+<h2>Lohnt es sich für Mieter überhaupt?</h2>
+<p>Ja – gerade in Mietwohnungen mit hohem Tagverbrauch. Da du beim Auszug die Anlage einfach mitnimmst, bleibt die Investition erhalten. Rechne im Balkonkraftwerk-Rechner durch, wie schnell sie sich an deinem Standort amortisiert.</p>
+`,
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {

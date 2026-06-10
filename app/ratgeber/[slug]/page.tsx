@@ -32,16 +32,6 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   };
 }
 
-function catPillClass(cat: string): string {
-  const map: Record<string, string> = {
-    "Wirtschaftlichkeit": "cat-pill--green",
-    "Recht & Anmeldung": "cat-pill--solar",
-    "Technik & Montage": "cat-pill--accent",
-    "Förderung": "cat-pill--purple",
-  };
-  return map[cat] ?? "cat-pill--accent";
-}
-
 export default function PostPage({ params }: { params: Params }) {
   const post = getPost(params.slug);
   if (!post) notFound();
@@ -55,52 +45,46 @@ export default function PostPage({ params }: { params: Params }) {
     dateModified: post.updated ?? post.date,
     inLanguage: "de-DE",
     articleSection: post.category,
-    author: { "@type": "Organization", name: site.name, url: site.url },
-    publisher: { "@type": "Organization", name: site.name, url: site.url },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${site.url}/ratgeber/${post.slug}` },
+    author: { "@type": "Organization", name: site.name },
+    publisher: { "@type": "Organization", name: site.name },
+    mainEntityOfPage: `${site.url}/ratgeber/${post.slug}`,
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
 
-      <div className="container" style={{ paddingTop: 36 }}>
-        <Breadcrumbs
-          items={[
-            { name: "Start", href: "/" },
-            { name: "Ratgeber", href: "/ratgeber" },
-            { name: post.title, href: `/ratgeber/${post.slug}` },
-          ]}
-        />
-      </div>
-
-      <article className="container container--narrow section--tight" style={{ paddingBottom: 0 }}>
-        <div className="article-header">
-          <span className={`cat-pill ${catPillClass(post.category)}`}>{post.category}</span>
-          <h1>{post.title}</h1>
-          <div className="article-meta">
-            <span>Aktualisiert {formatDate(post.updated ?? post.date)}</span>
-            <span className="article-meta__sep">·</span>
-            <span>{post.readingMinutes} Min. Lesezeit</span>
-          </div>
-        </div>
-
+      <article className="container section">
         <div className="prose">
+          <Breadcrumbs
+            items={[
+              { name: "Start", href: "/" },
+              { name: "Ratgeber", href: "/ratgeber" },
+              { name: post.title, href: `/ratgeber/${post.slug}` },
+            ]}
+          />
+
+          <div className="post-card__cat" style={{ marginBottom: 14 }}>{post.category}</div>
+          <h1 style={{ fontSize: "clamp(28px, 4.5vw, 42px)", fontWeight: 700, margin: "0 0 14px" }}>
+            {post.title}
+          </h1>
+          <div className="post-card__meta" style={{ marginBottom: 30 }}>
+            Aktualisiert am {formatDate(post.updated ?? post.date)} · {post.readingMinutes} Min. Lesezeit
+          </div>
+
           <div dangerouslySetInnerHTML={{ __html: post.body }} />
 
-          <div className="note" style={{ marginTop: 40 }}>
+          <div className="note" style={{ marginTop: 36 }}>
             Rechne deinen eigenen Fall durch:{" "}
             <Link href="/">zum Balkonkraftwerk-Rechner</Link>.
           </div>
         </div>
-      </article>
 
-      <section className="container container--narrow section" style={{ paddingTop: 48 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, letterSpacing: "-0.02em" }}>
-          Passend dazu
-        </h2>
-        <RelatedLinks calculators={post.relatedCalculators} posts={post.relatedPosts} />
-      </section>
+        <div className="container--narrow" style={{ padding: 0, marginTop: 48 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 18 }}>Passend dazu</h2>
+          <RelatedLinks calculators={post.relatedCalculators} posts={post.relatedPosts} />
+        </div>
+      </article>
     </>
   );
 }

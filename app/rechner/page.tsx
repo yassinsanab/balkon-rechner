@@ -3,7 +3,6 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { calculators, homeCalculator } from "@/content/calculators";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Alle Rechner – Balkonkraftwerk, Stromkosten & Speicher",
@@ -16,25 +15,8 @@ export default function RechnerIndex() {
   const home = homeCalculator();
   const hrefFor = (slug: string) => (slug === home.slug ? "/" : `/rechner/${slug}`);
 
-  const itemListLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Alle Energie-Rechner",
-    url: `${site.url}/rechner`,
-    numberOfItems: calculators.length,
-    itemListElement: calculators.map((c, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: c.title,
-      url: `${site.url}${hrefFor(c.slug)}`,
-      description: c.description,
-    })),
-  };
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
-
       <section className="container hero" style={{ paddingBottom: 0 }}>
         <span className="eyebrow"><Icon name="calculator" size={15} /> Rechner</span>
         <h1>Alle Energie-Rechner</h1>
@@ -52,7 +34,7 @@ export default function RechnerIndex() {
               <span className="calc-card__icon"><Icon name={c.icon} size={24} /></span>
               <h3>{c.shortLabel}</h3>
               <p>{c.description}</p>
-              <span className="calc-card__go">Rechner öffnen <Icon name="arrow" size={15} /></span>
+              <span className="calc-card__go">Rechner öffnen <Icon name="arrow" size={16} /></span>
             </Link>
           ))}
         </div>

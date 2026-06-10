@@ -1,10 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import s from "./Rechner.module.css";
 
-const YIELD_SOUTH = 850;
+const YIELD_SOUTH = 850; // kWh/kWp/Jahr, Richtwert Südausrichtung
 
 export default function SpeicherRechner() {
   const [wp, setWp] = useState(800);
@@ -15,22 +14,17 @@ export default function SpeicherRechner() {
   const r = useMemo(() => {
     const effectiveWp = Math.min(wp, 800) + Math.max(0, wp - 800) * 0.65;
     const generation = (effectiveWp / 1000) * YIELD_SOUTH;
+    // Eigenverbrauch ohne Speicher ~35 %, mit Speicher bis ~65 %, skaliert mit Kapazität.
     const scWithout = 0.35;
     const scWith = Math.min(0.65, scWithout + speicherKwh * 0.12);
     const extraKwh = generation * (scWith - scWithout);
     const extraSavings = (extraKwh * priceCt) / 100;
     const payback = extraSavings > 0 ? speicherCost / extraSavings : 0;
-    const savingsWithout = (generation * scWithout * priceCt) / 100;
-    const savingsWith = (generation * scWith * priceCt) / 100;
     return {
       extraKwh: Math.round(extraKwh),
       extraSavings,
       payback,
       scWith: Math.round(scWith * 100),
-      scWithout: Math.round(scWithout * 100),
-      savingsWithout,
-      savingsWith,
-      generation: Math.round(generation),
     };
   }, [wp, priceCt, speicherKwh, speicherCost]);
 
@@ -40,11 +34,8 @@ export default function SpeicherRechner() {
   const jahre = (n: number) =>
     n > 0 ? new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 }).format(n) + " Jahre" : "—";
 
-  const worthIt = r.payback > 0 && r.payback <= 12;
-
   return (
     <div className={s.grid} id="rechner">
-      {/* Eingaben */}
       <section className="card" aria-label="Eingaben">
         <div className={s.field}>
           <div className={s.labelRow}>
@@ -61,7 +52,6 @@ export default function SpeicherRechner() {
             onChange={(e) => setWp(Number(e.target.value))}
             aria-label="Modulleistung in Wattpeak"
           />
-          <span className={s.hint}>Jahreserzeugung (Richtwert Süd): ca. {num(r.generation)} kWh.</span>
         </div>
 
         <div className={s.field}>
@@ -79,9 +69,7 @@ export default function SpeicherRechner() {
             onChange={(e) => setSpeicherKwh(Number(e.target.value))}
             aria-label="Speicherkapazität in Kilowattstunden"
           />
-          <span className={s.hint}>
-            Eigenverbrauch steigt von {r.scWithout} % auf {r.scWith} %.
-          </span>
+          <span className={s.hint}>Eigenverbrauch mit Speicher ca. {r.scWith} %.</span>
         </div>
 
         <div className={`${s.field} ${s.inline}`}>
@@ -119,11 +107,10 @@ export default function SpeicherRechner() {
         </div>
       </section>
 
-      {/* Ergebnis */}
       <section className="card" aria-label="Ergebnis" aria-live="polite">
         <div className={s.totals}>
           <div className={`${s.total} ${s.totalAccent}`}>
-            <span className={s.totalLabel}>Mehr-Ersparnis / Jahr</span>
+            <span className={s.totalLabel}>Mehr-Ersparnis pro Jahr</span>
             <span className={s.totalVal}>{euro(r.extraSavings)}</span>
           </div>
           <div className={s.total}>
@@ -135,40 +122,20 @@ export default function SpeicherRechner() {
         <div className={s.breakdown}>
           <ul>
             <li>
-              <span>Ersparnis ohne Speicher</span>
-              <span className={s.bdVal}>{euro(r.savingsWithout)}/Jahr</span>
-            </li>
-            <li>
-              <span>Ersparnis mit Speicher</span>
-              <span className={s.bdVal}>{euro(r.savingsWith)}/Jahr</span>
-            </li>
-            <li>
               <span>Zusätzlich selbst genutzt</span>
               <span className={s.bdVal}>{num(r.extraKwh)} kWh/Jahr</span>
             </li>
           </ul>
           <p className={s.bdNote}>
-            {worthIt
-              ? `Amortisation in ${jahre(r.payback)} – innerhalb der typischen Speicher-Lebensdauer (10–15 Jahre). Lohnt sich.`
-              : r.payback > 12
-              ? `Amortisation in ${jahre(r.payback)} – das übersteigt die übliche Lebensdauer. Prüfe eine kleinere Kapazität.`
-              : "Erhöhe Modulleistung oder Strompreis, um die Wirtschaftlichkeit zu prüfen."}
+            Der Speicher rechnet sich, wenn er sich innerhalb seiner Lebensdauer (meist 10 bis 15
+            Jahre) amortisiert. Ein zu großer Speicher bleibt im Winter oft leer – kleiner ist hier
+            häufig wirtschaftlicher.
           </p>
         </div>
 
-        <div className={s.cta}>
-          <div className={s.ctaText}>
-            <h3>Gesamtanlage planen?</h3>
-            <p>Berechne Ertrag und Amortisation inkl. Speicher im Hauptrechner.</p>
-          </div>
-          <Link href="/" className="btn">
-            Zum Rechner
-          </Link>
-        </div>
-
         <p className={s.disclaimer}>
-          Schätzung auf Basis typischer Eigenverbrauchswerte (Richtwert Süd 850 kWh/kWp). Tatsächliche
-          Werte hängen von Ausrichtung, Standort und Verbrauchsprofil ab. Keine Energieberatung.
+          Schätzung auf Basis typischer Eigenverbrauchswerte. Tatsächliche Werte hängen von
+          Verbrauchsprofil, Ausrichtung und Wetter ab. Keine Energieberatung.
         </p>
       </section>
     </div>
