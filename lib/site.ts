@@ -4,7 +4,7 @@
 export const site = {
   name: "BalkonRechner",
   // No trailing slash. Update to your real domain before launch.
-  url: "https://balkonrechner.de",
+  url: "https://balkonrechner.online",
   title: "Balkonkraftwerk-Rechner 2026 – Ertrag, Ersparnis & Amortisation",
   description:
     "Kostenloser Balkonkraftwerk-Rechner: Berechne Ertrag, jährliche Stromersparnis und Amortisation deiner Mini-PV-Anlage – mit regionalen Ertragsdaten und den aktuellen Regeln für 2026.",

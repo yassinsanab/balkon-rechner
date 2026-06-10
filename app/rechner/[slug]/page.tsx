@@ -6,6 +6,9 @@ import RelatedLinks from "@/components/RelatedLinks";
 import Icon from "@/components/Icon";
 import StromkostenRechner from "@/components/StromkostenRechner";
 import SpeicherRechner from "@/components/SpeicherRechner";
+import WallboxRechner from "@/components/WallboxRechner";
+import PhotovoltaikRechner from "@/components/PhotovoltaikRechner";
+import StromtarifVergleich from "@/components/StromtarifVergleich";
 import { getCalculator, subCalculators } from "@/content/calculators";
 import { site } from "@/lib/site";
 
@@ -15,6 +18,9 @@ type Params = { slug: string };
 const COMPONENTS: Record<string, React.ComponentType> = {
   "stromkosten-rechner": StromkostenRechner,
   "speicher-rechner": SpeicherRechner,
+  "wallbox-rechner": WallboxRechner,
+  "photovoltaik-rechner": PhotovoltaikRechner,
+  "stromtarif-vergleich": StromtarifVergleich,
 };
 
 export function generateStaticParams(): Params[] {

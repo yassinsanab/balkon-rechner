@@ -9,7 +9,9 @@ export type IconName =
   | "arrow"
   | "leaf"
   | "battery"
-  | "plug";
+  | "plug"
+  | "car"
+  | "percent";
 
 const paths: Record<IconName, React.ReactNode> = {
   sun: (
@@ -49,6 +51,20 @@ const paths: Record<IconName, React.ReactNode> = {
     <>
       <path d="M9 2v6M15 2v6" />
       <path d="M6 8h12v3a6 6 0 0 1-12 0V8zM12 17v5" />
+    </>
+  ),
+  car: (
+    <>
+      <path d="M5 16V11l2-5h10l2 5v5" />
+      <path d="M3 16h18v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-3z" />
+      <path d="M7 13h.01M17 13h.01" />
+    </>
+  ),
+  percent: (
+    <>
+      <path d="M19 5 5 19" />
+      <circle cx="7.5" cy="7.5" r="2.5" />
+      <circle cx="16.5" cy="16.5" r="2.5" />
     </>
   ),
 };

@@ -103,7 +103,7 @@ export default function Rechner() {
   return (
     <div className={s.grid} id="rechner">
       {/* Eingaben */}
-      <section className="card" aria-label="Eingaben">
+      <section className={s.panel} aria-label="Eingaben">
         <div className={s.field}>
           <div className={s.labelRow}>
             <span className={s.label}>Modulleistung</span>
@@ -228,7 +228,7 @@ export default function Rechner() {
       </section>
 
       {/* Ergebnis */}
-      <section className="card" aria-label="Ergebnis" aria-live="polite">
+      <section className={s.results} aria-label="Ergebnis" aria-live="polite">
         <div className={s.totals}>
           <div className={`${s.total} ${s.totalAccent}`}>
             <span className={s.totalLabel}>Ersparnis pro Jahr</span>

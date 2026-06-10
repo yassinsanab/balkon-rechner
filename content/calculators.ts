@@ -135,6 +135,122 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["balkonkraftwerk-rechner", "stromkosten-rechner"],
     relatedPosts: ["balkonkraftwerk-mit-speicher", "lohnt-sich-ein-balkonkraftwerk"],
   },
+  {
+    slug: "wallbox-rechner",
+    title: "Wallbox-Rechner 2026 – E-Auto Ladekosten zu Hause berechnen",
+    h1: "E-Auto Ladekosten zu Hause",
+    shortLabel: "Wallbox-Rechner",
+    description:
+      "Berechne, was das Laden deines E-Autos zu Hause pro Jahr kostet – und wie viel du gegenüber dem öffentlichen Laden sparst.",
+    keywords: ["wallbox rechner", "e-auto ladekosten berechnen", "elektroauto stromkosten zu hause"],
+    icon: "car",
+    intro:
+      "Zu Hause laden ist meist deutlich günstiger als an der öffentlichen Säule. Dieser Rechner zeigt deine jährlichen Ladekosten und die Ersparnis – optional mit eigenem Solarstrom.",
+    content: [
+      {
+        h2: "Wie viel kostet das Laden zu Hause?",
+        p: [
+          "Die Ladekosten ergeben sich aus deiner Fahrleistung, dem Verbrauch pro 100 Kilometer und deinem Strompreis. Ein typisches E-Auto verbraucht 16 bis 20 kWh pro 100 km.",
+          "Beispiel: 12.000 km im Jahr bei 18 kWh/100 km sind 2.160 kWh. Bei 37 Cent pro kWh kostet das rund 800 Euro im Jahr – an der öffentlichen Schnellladesäule oft das Doppelte.",
+        ],
+      },
+      {
+        h2: "Noch günstiger mit Solarstrom",
+        ul: [
+          "Lädst du tagsüber mit eigenem PV- oder Balkonkraftwerk-Strom, sinken die Kosten weiter.",
+          "Ein dynamischer oder Autostrom-Tarif kann den Preis pro kWh zusätzlich senken.",
+          "Lade nach Möglichkeit in günstigen Zeitfenstern oder bei Solar-Überschuss.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Wie viel kostet eine Wallbox-Ladung?",
+        a: "Das hängt von Akkugröße und Strompreis ab. Eine Ladung von 60 kWh kostet bei 37 Cent pro kWh rund 22 Euro. Pro 100 km sind es bei 18 kWh Verbrauch etwa 6,70 Euro.",
+      },
+      {
+        q: "Lohnt sich Laden zu Hause gegenüber öffentlich?",
+        a: "In der Regel ja. Haushaltsstrom kostet rund 37 Cent pro kWh, öffentliches Schnellladen oft 50 bis 70 Cent. Über ein Jahr summiert sich das auf mehrere hundert Euro Ersparnis.",
+      },
+    ],
+    relatedCalculators: ["stromkosten-rechner", "photovoltaik-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk"],
+  },
+  {
+    slug: "photovoltaik-rechner",
+    title: "Photovoltaik-Rechner 2026 – Ertrag & Ersparnis der Dachanlage",
+    h1: "Lohnt sich deine Photovoltaikanlage?",
+    shortLabel: "Photovoltaik-Rechner",
+    description:
+      "Berechne Ertrag, Eigenverbrauchsersparnis, Einspeisevergütung und Amortisation deiner PV-Dachanlage – mit regionalen Ertragsdaten für 2026.",
+    keywords: ["photovoltaik rechner", "pv anlage rechner", "photovoltaik ertrag berechnen"],
+    icon: "sun",
+    intro:
+      "Anders als beim Balkonkraftwerk zählt bei der Dachanlage auch die Einspeisevergütung. Der Rechner kombiniert Eigenverbrauchsersparnis und Vergütung zur realistischen Amortisation.",
+    content: [
+      {
+        h2: "Woraus ergibt sich die Ersparnis?",
+        p: [
+          "Eine Dach-PV-Anlage erzeugt je nach Größe und Region 900 bis 1.150 kWh pro kWp und Jahr. Der selbst genutzte Anteil spart den vollen Strompreis, der eingespeiste Rest bringt die Einspeisevergütung.",
+          "2026 liegt die Vergütung für kleine Anlagen bei rund 8 Cent pro kWh. Da der eigene Strompreis deutlich höher ist, lohnt sich ein hoher Eigenverbrauch – etwa durch Wärmepumpe, E-Auto oder Speicher.",
+        ],
+      },
+      {
+        h2: "Typische Kennzahlen",
+        ul: [
+          "Anschaffung: rund 1.300 bis 1.700 Euro pro kWp inklusive Montage.",
+          "Eigenverbrauch ohne Speicher: 25 bis 35 Prozent, mit Speicher 50 bis 70 Prozent.",
+          "Amortisation: meist 9 bis 13 Jahre, bei hohem Eigenverbrauch schneller.",
+          "0 Prozent Mehrwertsteuer auf Anlage und Speicher.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Wie viel Strom erzeugt eine PV-Anlage pro kWp?",
+        a: "In Deutschland sind 900 bis 1.150 kWh pro kWp und Jahr realistisch, im Süden mehr als im Norden. Eine 8-kWp-Anlage erzeugt also grob 7.000 bis 9.000 kWh im Jahr.",
+      },
+      {
+        q: "Lohnt sich Photovoltaik 2026 noch?",
+        a: "Ja, vor allem bei hohem Eigenverbrauch. Auch wenn die Einspeisevergütung gesunken ist, spart jede selbst genutzte Kilowattstunde den vollen Strompreis von rund 37 Cent – deutlich mehr als die Vergütung.",
+      },
+    ],
+    relatedCalculators: ["balkonkraftwerk-rechner", "speicher-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk", "balkonkraftwerk-mit-speicher"],
+  },
+  {
+    slug: "stromtarif-vergleich",
+    title: "Stromtarif-Vergleich – Ersparnis beim Anbieterwechsel berechnen",
+    h1: "Stromtarif vergleichen & sparen",
+    shortLabel: "Stromtarif-Vergleich",
+    description:
+      "Vergleiche deinen aktuellen Stromtarif mit einem neuen Angebot und sieh sofort, wie viel ein Wechsel pro Jahr spart – inklusive Grundgebühr.",
+    keywords: ["stromtarif vergleich", "stromanbieter wechseln sparen", "stromkosten vergleichen"],
+    icon: "percent",
+    intro:
+      "Ein Anbieterwechsel ist oft der schnellste Hebel für niedrigere Stromkosten. Trag beide Tarife ein und sieh die jährliche Ersparnis – Arbeitspreis und Grundgebühr berücksichtigt.",
+    content: [
+      {
+        h2: "Worauf es beim Vergleich ankommt",
+        p: [
+          "Ein fairer Vergleich rechnet Arbeitspreis (Cent pro kWh) und Grundgebühr (Euro pro Monat) zusammen. Ein niedriger Arbeitspreis nützt wenig, wenn die Grundgebühr hoch ist.",
+          "Achte zusätzlich auf Vertragslaufzeit, Preisgarantie und Boni. Neukundenboni verbessern das erste Jahr, sagen aber nichts über die Folgejahre.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Wie viel kann ich durch einen Stromanbieterwechsel sparen?",
+        a: "Je nach Ausgangstarif sind 100 bis 400 Euro im Jahr möglich. Den genauen Betrag berechnest du, indem du beide Tarife mit Arbeitspreis und Grundgebühr in den Vergleich einträgst.",
+      },
+      {
+        q: "Lohnt sich ein Wechsel trotz Balkonkraftwerk?",
+        a: "Ja. Das Balkonkraftwerk senkt deinen Netzbezug, ein günstigerer Tarif senkt den Preis pro verbleibender Kilowattstunde. Beide Effekte addieren sich.",
+      },
+    ],
+    relatedCalculators: ["stromkosten-rechner", "balkonkraftwerk-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk"],
+  },
 ];
 
 export function getCalculator(slug: string): Calculator | undefined {

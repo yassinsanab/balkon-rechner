@@ -328,6 +328,221 @@ export const posts: Post[] = [
 <p>Ja – gerade in Mietwohnungen mit hohem Tagverbrauch. Da du beim Auszug die Anlage einfach mitnimmst, bleibt die Investition erhalten. Rechne im Balkonkraftwerk-Rechner durch, wie schnell sie sich an deinem Standort amortisiert.</p>
 `,
   },
+  {
+    slug: "balkonkraftwerk-winter",
+    title: "Balkonkraftwerk im Winter: Wie viel Ertrag bringt es noch?",
+    category: "Technik & Montage",
+    description: "Im Winter erzeugt ein Balkonkraftwerk weniger – aber nicht nichts. Wie viel realistisch zusammenkommt und wie eine senkrechte Montage hilft.",
+    date: "2026-01-18",
+    readingMinutes: 4,
+    keywords: ["balkonkraftwerk winter", "balkonkraftwerk winterertrag", "balkonkraftwerk ertrag winter"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-ausrichtung", "lohnt-sich-ein-balkonkraftwerk"],
+    body: `
+<p class="lead">Im Winter liefert ein Balkonkraftwerk deutlich weniger Strom als im Sommer – über das Jahr gesehen ist der Beitrag aber trotzdem relevant.</p>
+<h2>Wie viel weniger ist es?</h2>
+<p>Die Wintermonate von November bis Februar steuern je nach Standort nur etwa 10 bis 20 Prozent des Jahresertrags bei. Tiefer Sonnenstand, kurze Tage und häufige Bewölkung sind die Gründe. Ein 800-Wp-Set erzeugt im Dezember oft nur 15 bis 30 kWh.</p>
+<h2>Senkrechte Montage als Vorteil</h2>
+<p>Wer die Module senkrecht am Geländer montiert, fängt den flachen Wintersonnenstand besser ein und verliert weniger durch Schnee, der nicht liegen bleibt. Im Sommer ist diese Montage etwas schwächer, im Winter dafür stärker – ein guter Kompromiss für ganzjährigen Eigenverbrauch.</p>
+<div class="note">Da der Eigenverbrauch im Winter durch Licht und Heizungspumpe oft hoch ist, wird der wenige erzeugte Strom fast vollständig selbst genutzt. Rechne deinen Jahreswert im Balkonkraftwerk-Rechner.</div>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-reinigen",
+    title: "Balkonkraftwerk reinigen und warten: Lohnt sich das?",
+    category: "Technik & Montage",
+    description: "Balkonkraftwerke sind nahezu wartungsfrei. Wann eine Reinigung den Ertrag spürbar erhöht – und wann sie sich nicht lohnt.",
+    date: "2026-03-10",
+    readingMinutes: 3,
+    keywords: ["balkonkraftwerk reinigen", "solarmodule reinigen", "balkonkraftwerk wartung"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-ausrichtung", "balkonkraftwerk-winter"],
+    body: `
+<p class="lead">Die gute Nachricht: Ein Balkonkraftwerk ist praktisch wartungsfrei. Regen erledigt die Reinigung in den meisten Fällen von selbst.</p>
+<h2>Wann eine Reinigung sinnvoll ist</h2>
+<p>Bei flacher oder waagerechter Montage kann sich Schmutz, Pollen oder Vogelkot sammeln und den Ertrag um einige Prozent senken. Senkrecht montierte Module bleiben meist sauber. Eine Reinigung lohnt sich vor allem bei sichtbarer Verschmutzung und flachem Winkel.</p>
+<h2>So reinigst du richtig</h2>
+<ul>
+<li>Klares Wasser und ein weicher Schwamm oder Lappen genügen.</li>
+<li>Keine scharfen Reiniger, keine harten Bürsten – sie zerkratzen das Glas.</li>
+<li>Am besten morgens oder abends, wenn die Module nicht heiß sind.</li>
+<li>Auf Sicherheit achten: niemals in riskanter Position am Geländer hantieren.</li>
+</ul>
+<p>Eine jährliche Sichtkontrolle der Halterung und Kabel reicht ansonsten völlig aus.</p>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-stecker",
+    title: "Schuko oder Wieland? Der richtige Stecker fürs Balkonkraftwerk",
+    category: "Technik & Montage",
+    description: "Schuko-Stecker sind nach aktueller Norm bis 960 Wp erlaubt, darüber wird ein Energiestecker nötig. Was du zum Anschluss wissen musst.",
+    date: "2026-02-22",
+    readingMinutes: 4,
+    keywords: ["balkonkraftwerk schuko", "balkonkraftwerk wieland stecker", "balkonkraftwerk anschluss"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-anmelden", "balkonkraftwerk-wieviele-module"],
+    body: `
+<p class="lead">Beim Anschluss eines Balkonkraftwerks gibt es zwei Wege: den normalen Schuko-Stecker oder eine spezielle Energiesteckvorrichtung (oft „Wieland" genannt). Was zulässig ist, hängt von der Modulleistung ab.</p>
+<h2>Schuko-Stecker</h2>
+<p>Der Anschluss über eine normale Schuko-Steckdose ist nach aktueller Norm bis zu einer Modulleistung von 960 Wp zulässig – vorausgesetzt, der Wechselrichter erfüllt die Sicherheitsanforderungen (NA-Schutz). Für die allermeisten Sets ist das der einfachste Weg.</p>
+<h2>Energiesteckvorrichtung (Wieland)</h2>
+<p>Wer mehr Modulleistung (bis 2.000 Wp) installieren möchte, braucht in der Regel eine Energiesteckvorrichtung, die von einer Fachkraft installiert wird. Sie gilt als besonders sicher, ist aber aufwendiger.</p>
+<div class="note">Unabhängig vom Stecker: Der Wechselrichter darf maximal 800 Watt einspeisen, und die Anmeldung im Marktstammdatenregister ist Pflicht.</div>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-versicherung",
+    title: "Balkonkraftwerk versichern: Zahlt die Hausratversicherung?",
+    category: "Recht & Anmeldung",
+    description: "Viele Hausrat- und Haftpflichtversicherungen decken Balkonkraftwerke inzwischen mit ab. Worauf du beim Versicherungsschutz achten solltest.",
+    date: "2026-04-05",
+    readingMinutes: 4,
+    keywords: ["balkonkraftwerk versicherung", "balkonkraftwerk hausratversicherung", "balkonkraftwerk versichern"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-mieter", "balkonkraftwerk-anmelden"],
+    body: `
+<p class="lead">Ein Balkonkraftwerk ist eine überschaubare Investition – trotzdem stellt sich die Frage nach dem Versicherungsschutz bei Sturm, Diebstahl oder Schäden.</p>
+<h2>Hausratversicherung</h2>
+<p>Viele moderne Hausratversicherungen schließen Balkonkraftwerke inzwischen ein oder bieten den Einschluss gegen geringen Aufpreis an. Gedeckt sind dann typischerweise Schäden durch Sturm, Hagel, Feuer oder Diebstahl. Ein kurzer Anruf bei deinem Versicherer schafft Klarheit.</p>
+<h2>Haftpflicht</h2>
+<p>Schäden, die deine Anlage bei anderen verursacht – etwa ein herabfallendes Modul – fallen in den Bereich der Privathaftpflicht. Auch hier lohnt die Nachfrage, ob Steckersolar ausdrücklich eingeschlossen ist.</p>
+<div class="note">Stand der Angaben: 2026. Versicherungsbedingungen unterscheiden sich stark – prüfe deinen konkreten Vertrag. Dies ist keine Versicherungsberatung.</div>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-steuer",
+    title: "Ist ein Balkonkraftwerk steuerfrei? Steuern 2026 erklärt",
+    category: "Recht & Anmeldung",
+    description: "0 Prozent Mehrwertsteuer beim Kauf, und auch sonst bleibt das Balkonkraftwerk steuerlich unkompliziert. Was 2026 gilt.",
+    date: "2026-03-28",
+    readingMinutes: 3,
+    keywords: ["balkonkraftwerk steuer", "balkonkraftwerk steuerfrei", "balkonkraftwerk steuererklärung"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-foerderung-2026", "lohnt-sich-ein-balkonkraftwerk"],
+    body: `
+<p class="lead">Beim Thema Steuern können Balkonkraftwerk-Besitzer aufatmen: Der Betrieb ist 2026 steuerlich denkbar einfach.</p>
+<h2>0 Prozent Mehrwertsteuer beim Kauf</h2>
+<p>Seit 2023 gilt für private Photovoltaik bis 30 kWp ein Nullsteuersatz. Auf Balkonkraftwerk und Speicher fällt also keine Mehrwertsteuer an – der ausgewiesene Preis ist der Endpreis.</p>
+<h2>Keine Einkommensteuer auf den Strom</h2>
+<p>Kleine Anlagen sind von der Einkommensteuer auf Einnahmen und Entnahmen befreit. Da die meisten Balkonkraftwerke ohnehin keine nennenswerte Einspeisevergütung erhalten, entsteht hier praktisch keine steuerliche Belastung.</p>
+<div class="note">Dies ist eine allgemeine Einordnung und keine Steuerberatung. Im Zweifel hilft ein Steuerberater oder die Finanzverwaltung weiter.</div>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-600-vs-800-watt",
+    title: "600 vs. 800 Watt Balkonkraftwerk: Lohnt sich das Upgrade?",
+    category: "Technik & Montage",
+    description: "Seit dem Solarpaket I sind 800 Watt erlaubt. Ob sich das Upgrade von 600 auf 800 Watt lohnt und für wen.",
+    date: "2026-02-08",
+    readingMinutes: 4,
+    keywords: ["600 vs 800 watt balkonkraftwerk", "balkonkraftwerk 800 watt upgrade", "balkonkraftwerk wechselrichter 800w"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-wieviele-module", "lohnt-sich-ein-balkonkraftwerk"],
+    body: `
+<p class="lead">Mit dem Solarpaket I wurde die zulässige Einspeiseleistung von 600 auf 800 Watt angehoben. Für viele stellt sich die Frage: aufrüsten oder nicht?</p>
+<h2>Was die 200 Watt mehr bringen</h2>
+<p>Die zusätzlichen 200 Watt wirken vor allem in den ertragsstarken Mittagsstunden und an sonnigen Tagen. Über das Jahr kann das je nach Modulleistung und Eigenverbrauch zu spürbar mehr nutzbarem Strom führen – allerdings nur, wenn du diese Spitzen auch selbst verbrauchst.</p>
+<h2>Wann sich das Upgrade lohnt</h2>
+<ul>
+<li>Du hast bereits genügend Modulleistung (deutlich über 800 Wp), die der alte 600-W-Wechselrichter ausbremst.</li>
+<li>Dein Eigenverbrauch ist hoch genug, um die Mittagsspitzen zu nutzen.</li>
+<li>Manche Wechselrichter lassen sich per Update freischalten – das ist günstiger als ein Neukauf.</li>
+</ul>
+<p>Wer ohnehin neu kauft, sollte direkt zu einem 800-W-Gerät greifen.</p>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-wieviele-module",
+    title: "Wie viele Module darf ein Balkonkraftwerk haben?",
+    category: "Recht & Anmeldung",
+    description: "Bis 2.000 Wp Modulleistung sind erlaubt, der Wechselrichter speist aber maximal 800 Watt ein. Warum mehr Module trotzdem sinnvoll sein können.",
+    date: "2026-02-15",
+    readingMinutes: 3,
+    keywords: ["balkonkraftwerk wie viele module", "balkonkraftwerk 2000 wp", "balkonkraftwerk modulleistung"],
+    relatedCalculators: ["balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-600-vs-800-watt", "balkonkraftwerk-stecker"],
+    body: `
+<p class="lead">Eine häufige Verwirrung: Wechselrichterleistung und Modulleistung sind zwei verschiedene Dinge. Beim Balkonkraftwerk gelten dafür unterschiedliche Grenzen.</p>
+<h2>800 Watt Einspeisung, bis 2.000 Wp Module</h2>
+<p>Der Wechselrichter darf maximal 800 Watt ins Hausnetz einspeisen. Die installierte Modulleistung darf aber bis zu 2.000 Wattpeak betragen – bei Anschluss über einen Schuko-Stecker nach aktueller Norm bis 960 Wp.</p>
+<h2>Warum mehr Module sinnvoll sind</h2>
+<p>Mehr Modulleistung als 800 Wp klingt zunächst unlogisch, ist es aber nicht: Der 800-W-Wechselrichter kappt nur die seltenen Mittagsspitzen. Morgens, abends und bei Bewölkung liefern die größeren Module mehr Leistung – die Anlage ist häufiger ausgelastet und erzeugt über das Jahr deutlich mehr Strom.</p>
+<div class="note">Genau diesen Effekt bildet der Balkonkraftwerk-Rechner ab: Stell die Modulleistung höher als 800 Wp und beobachte, wie der Jahresertrag steigt.</div>
+`,
+  },
+  {
+    slug: "strom-sparen-haushalt",
+    title: "Strom sparen im Haushalt: 10 Tipps, die wirklich wirken",
+    category: "Wirtschaftlichkeit",
+    description: "Von der Grundlast bis zum Standby: Die wirksamsten Hebel, um deine Stromkosten dauerhaft zu senken – ergänzend zum Balkonkraftwerk.",
+    date: "2026-05-02",
+    readingMinutes: 5,
+    keywords: ["strom sparen haushalt", "stromkosten senken tipps", "stromverbrauch reduzieren"],
+    relatedCalculators: ["stromkosten-rechner", "balkonkraftwerk-rechner"],
+    relatedPosts: ["balkonkraftwerk-welche-geraete", "dynamische-stromtarife"],
+    body: `
+<p class="lead">Ein Balkonkraftwerk senkt deine Stromkosten – aber die wirksamste Ersparnis entsteht aus der Kombination mit klugem Verbrauch. Diese Hebel lohnen sich am meisten.</p>
+<h2>Die größten Verbraucher zuerst</h2>
+<ul>
+<li><strong>Alte Geräte tauschen:</strong> Kühl- und Gefriergeräte über zehn Jahre verbrauchen oft das Doppelte moderner Modelle.</li>
+<li><strong>Standby eliminieren:</strong> abschaltbare Steckdosenleisten sparen schnell über 100 kWh im Jahr.</li>
+<li><strong>Wäsche bei 30 °C:</strong> niedrigere Temperaturen sparen einen Großteil der Waschenergie.</li>
+<li><strong>Trockner meiden:</strong> Wäscheleine statt Trockner spart pro Ladung spürbar.</li>
+</ul>
+<h2>Solarstrom clever nutzen</h2>
+<p>Lege große Verbraucher in die Mittagsstunden, wenn dein Balkonkraftwerk am meisten liefert. So erhöhst du den Eigenverbrauch – und genau der spart bares Geld.</p>
+<div class="note">Berechne mit dem Stromkosten-Rechner, wie sich ein geringerer Verbrauch oder ein günstigerer Preis auf deine Jahreskosten auswirkt.</div>
+`,
+  },
+  {
+    slug: "dynamische-stromtarife",
+    title: "Dynamische Stromtarife 2026: Lohnt sich der Wechsel?",
+    category: "Wirtschaftlichkeit",
+    description: "Dynamische Tarife folgen dem Börsenpreis – mit Chancen und Risiken. Für wen sie sich lohnen und wie sie mit Solarstrom zusammenspielen.",
+    date: "2026-05-16",
+    readingMinutes: 5,
+    keywords: ["dynamische stromtarife", "dynamischer stromtarif lohnt sich", "stromtarif börsenpreis"],
+    relatedCalculators: ["stromtarif-vergleich", "stromkosten-rechner"],
+    relatedPosts: ["strom-sparen-haushalt", "lohnt-sich-ein-balkonkraftwerk"],
+    body: `
+<p class="lead">Seit 2025 müssen Energieversorger dynamische Stromtarife anbieten. Sie koppeln deinen Preis an die Strombörse – das kann sparen, erfordert aber Flexibilität.</p>
+<h2>So funktionieren sie</h2>
+<p>Statt eines festen Arbeitspreises zahlst du den stündlich schwankenden Börsenpreis plus Abgaben und Anbieteraufschlag. In günstigen Stunden – oft nachts oder bei viel Wind und Sonne – ist Strom deutlich billiger, in Spitzenzeiten teurer.</p>
+<h2>Für wen sich das lohnt</h2>
+<ul>
+<li>Du kannst Verbrauch zeitlich verschieben (Wärmepumpe, E-Auto, Waschmaschine).</li>
+<li>Du hast ein Smart Meter, das stundengenaue Abrechnung ermöglicht.</li>
+<li>Du gehst bewusst mit Preisschwankungen um.</li>
+</ul>
+<p>Wer wenig flexibel ist, fährt mit einem günstigen Festpreistarif oft entspannter. Vergleiche beide Varianten ehrlich.</p>
+<div class="note">Mit dem Stromtarif-Vergleich kannst du deinen aktuellen Tarif einem Angebot gegenüberstellen und die Jahresersparnis abschätzen.</div>
+`,
+  },
+  {
+    slug: "balkonkraftwerk-oder-photovoltaik",
+    title: "Balkonkraftwerk oder PV-Anlage? Der ehrliche Vergleich",
+    category: "Wirtschaftlichkeit",
+    description: "Mini-PV am Balkon oder große Dachanlage? Was sich für wen lohnt – nach Investition, Ertrag, Aufwand und Wohnsituation.",
+    date: "2026-05-28",
+    readingMinutes: 6,
+    keywords: ["balkonkraftwerk oder photovoltaik", "balkonkraftwerk vs pv anlage", "mini pv oder dachanlage"],
+    relatedCalculators: ["balkonkraftwerk-rechner", "photovoltaik-rechner"],
+    relatedPosts: ["lohnt-sich-ein-balkonkraftwerk", "balkonkraftwerk-mit-speicher"],
+    body: `
+<p class="lead">Beide erzeugen Solarstrom – aber sie spielen in unterschiedlichen Ligen. Die Wahl hängt vor allem von deiner Wohnsituation und deinem Budget ab.</p>
+<h2>Balkonkraftwerk</h2>
+<p>Günstig (ab rund 300 Euro), schnell installiert, ideal für Mieter und Wohnungen. Es deckt einen Teil der Grundlast und amortisiert sich oft in drei bis fünf Jahren. Die Leistung ist mit 800 Watt aber begrenzt.</p>
+<h2>Photovoltaik-Dachanlage</h2>
+<p>Höhere Investition (oft 10.000 Euro und mehr), dafür um ein Vielfaches mehr Ertrag und zusätzlich Einspeisevergütung. Sinnvoll für Eigenheimbesitzer mit geeignetem Dach, besonders in Kombination mit Wärmepumpe oder E-Auto.</p>
+<h2>Die Entscheidung</h2>
+<ul>
+<li><strong>Mietwohnung oder kleines Budget?</strong> Balkonkraftwerk.</li>
+<li><strong>Eigenes Dach und hoher Verbrauch?</strong> Dachanlage – oft die wirtschaftlichere Lösung über 20 Jahre.</li>
+<li><strong>Unsicher?</strong> Mit dem Balkonkraftwerk starten und später aufs Dach erweitern.</li>
+</ul>
+<div class="note">Rechne beide Varianten durch: den Balkon im Balkonkraftwerk-Rechner, das Dach im Photovoltaik-Rechner.</div>
+`,
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {

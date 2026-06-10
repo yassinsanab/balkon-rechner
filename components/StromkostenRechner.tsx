@@ -26,7 +26,7 @@ export default function StromkostenRechner() {
 
   return (
     <div className={s.grid} id="rechner">
-      <section className="card" aria-label="Eingaben">
+      <section className={s.panel} aria-label="Eingaben">
         <div className={s.field}>
           <span className={s.label}>Haushaltsgröße</span>
           <div className={s.seg} role="group" aria-label="Haushaltsgröße">
@@ -78,7 +78,7 @@ export default function StromkostenRechner() {
         </div>
       </section>
 
-      <section className="card" aria-label="Ergebnis" aria-live="polite">
+      <section className={s.results} aria-label="Ergebnis" aria-live="polite">
         <div className={s.totals}>
           <div className={`${s.total} ${s.totalAccent}`}>
             <span className={s.totalLabel}>Stromkosten pro Monat</span>
